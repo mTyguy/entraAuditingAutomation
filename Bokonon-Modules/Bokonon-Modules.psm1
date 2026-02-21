@@ -1,0 +1,42 @@
+# Use \ for Linux/OS interoperability
+# Core
+  . .\Bokonon-Modules\Core\New-RuleMetaData.ps1
+  . .\Bokonon-Modules\Core\Write-TestInProgress.ps1
+  . .\Bokonon-Modules\Core\Get-AdminRoles.ps1
+# CISA
+  . .\Bokonon-Modules\CISA\Write-CISAHighlyPrivilegedRoles.ps1
+  # ApplicationConsent-Modules
+    . .\Bokonon-Modules\CISA\ApplicationConsent-Modules\Test-UserApplicationConsent.ps1
+    . .\Bokonon-Modules\CISA\ApplicationConsent-Modules\Test-UserApplicationRegistration.ps1
+    . .\Bokonon-Modules\CISA\ApplicationConsent-Modules\Test-AdminApplicationConsentWorkflow.ps1
+  # AuthenticationMethods-Modules
+    . .\Bokonon-Modules\CISA\AuthenticationMethods-Modules\Test-MSAuthNLoginContext.ps1
+    . .\Bokonon-Modules\CISA\AuthenticationMethods-Modules\Test-AuthNMigrationStatus.ps1
+    . .\Bokonon-Modules\CISA\AuthenticationMethods-Modules\Test-LessSecureAuthNDisabled.ps1
+  # ConditionalAccess-Modules
+    . .\Bokonon-Modules\CISA\ConditionalAccess-Modules\Test-BlockHighRiskSignin.ps1
+    . .\Bokonon-Modules\CISA\ConditionalAccess-Modules\Test-BlockLegacyAuthN.ps1
+    . .\Bokonon-Modules\CISA\ConditionalAccess-Modules\Test-BlockHighRiskUser.ps1
+    . .\Bokonon-Modules\CISA\ConditionalAccess-Modules\Test-EnforcePhishResistantMFA.ps1
+    . .\Bokonon-Modules\CISA\ConditionalAccess-Modules\Test-MFAAllUsersAllApps.ps1
+    . .\Bokonon-Modules\CISA\ConditionalAccess-Modules\Test-PhishResistantMFAForPrivRoles.ps1
+    . .\Bokonon-Modules\CISA\ConditionalAccess-Modules\Test-CompliantDevices.ps1
+    . .\Bokonon-Modules\CISA\ConditionalAccess-Modules\Test-BlockDeviceCodeFlow.ps1
+    . .\Bokonon-Modules\CISA\ConditionalAccess-Modules\Test-CompliantDevicesMFARegistration.ps1
+  # Entra-Modules
+    . .\Bokonon-Modules\CISA\Entra-Modules\Test-GlobalAdminsCount.ps1
+    . .\Bokonon-Modules\CISA\Entra-Modules\Test-PasswordExpiration.ps1
+    . .\Bokonon-Modules\CISA\Entra-Modules\Test-CloudOnlyAdmins.ps1
+    . .\Bokonon-Modules\CISA\Entra-Modules\Test-PermActivePrivRoles.ps1
+    . .\Bokonon-Modules\CISA\Entra-Modules\Test-GlobalAdminApprovalRequired.ps1
+    . .\Bokonon-Modules\CISA\Entra-Modules\Test-PrivRolesActivationAlert.ps1
+    . .\Bokonon-Modules\CISA\Entra-Modules\Test-GlobalAdminActivationAlert.ps1
+    . .\Bokonon-Modules\CISA\Entra-Modules\Test-GuestInviterRoleCheck.ps1
+    . .\Bokonon-Modules\CISA\Entra-Modules\Test-GuestUserAccess.ps1
+    . .\Bokonon-Modules\CISA\Entra-Modules\Test-GuestsFromApprovedDomains.ps1
+# ClientSpecific
+###. .\Bokonon-Modules\ClientSpecific\Test-ClientSpecific01.ps1
+# Custom
+  # StaleAccounts
+    . .\Bokonon-Modules\Custom\StaleAccounts-Modules\Test-StaleGuests.ps1
+#$moduleVersion = '0.1'
