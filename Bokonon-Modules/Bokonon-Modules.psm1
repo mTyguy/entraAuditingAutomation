@@ -38,6 +38,8 @@
     . .\Bokonon-Modules\CISA\Teams-Modules\Test-ExternalParticipantsRequestControl.ps1
     . .\Bokonon-Modules\CISA\Teams-Modules\Test-AnonUsersStartMeeting.ps1
     . .\Bokonon-Modules\CISA\Teams-Modules\Test-AnonAndDialInBypassLobby.ps1
+    . .\Bokonon-Modules\CISA\Teams-Modules\Test-InternalUsersAdmitAutomatically.ps1
+    . .\Bokonon-Modules\CISA\Teams-Modules\Test-DialInBypassLobby.ps1
 # ClientSpecific
 ###. .\Bokonon-Modules\ClientSpecific\Test-ClientSpecific01.ps1
 # Custom

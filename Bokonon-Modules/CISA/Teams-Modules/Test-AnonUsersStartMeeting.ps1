@@ -8,8 +8,10 @@ function Test-AnonUsersStartMeeting {
   Param(
   )
 # Grab required data from environment
- 
-  $teamsAnonUserStartMeetingPolicies = Get-CsTeamsMeetingPolicy | Where-Object {$_.AllowAnonymousUsersToStartMeeting -eq $true}
+
+  $teamsMeetingsPolicies = Get-CsTeamsMeetingPolicy
+
+  $teamsAnonUserStartMeetingPolicies = $teamsMeetingsPolicies | Where-Object {$_.AllowAnonymousUsersToStartMeeting -eq $true}
 
 # Set default to Fail
 
@@ -34,6 +36,11 @@ function Test-AnonUsersStartMeeting {
       'Result'   = "No policies allow Anonymous Users to start meetings."
     }
   } elseif ($PassFail -eq "Fail") {
+      $htmlConstruction += $globalPolicy = [ordered] @{
+        'Global Policy'                      = ($teamsMeetingsPolicies | Where-Object {$_.Identity -eq "Global"}).Identity
+        'Anonymous Users Can Start Meetings' = ($teamsMeetingsPolicies | Where-Object {$_.Identity -eq "Global"}).AllowAnonymousUsersToStartMeeting
+        '-----------------------'            = "-----------------------"
+      }
     foreach ($_ in $teamsAnonUserStartMeetingPolicies) {
       if ($_.AllowAnonymousUsersToStartMeeting -eq $true) {
         $htmlConstruction += $policyLoop = [ordered] @{
@@ -45,7 +52,7 @@ function Test-AnonUsersStartMeeting {
     }
 
 # Create Rule Meta Data
-  $htmlRuleMetaData = New-RuleMetaData -RuleDescription "Anonymous Users Shall Not be allowed to start meetings." -Result "$PassFail" -Resolution "Ensure each Meetings Policy does not allow Anonymous Users to start meetings." -Controls "Use these technologies to remediate" -Citations "https://learn.microsoft.com/en-us/microsoftteams/settings-policies-reference?WT.mc_id=TeamsAdminCenterCSH#meeting-join--lobby" -Framework "Nist SP 800-53 Rev 5 FedRAMP High"
+  $htmlRuleMetaData = New-RuleMetaData -RuleDescription "Anonymous Users Shall Not be allowed to start meetings." -Result "$PassFail" -Resolution "Ensure each Meetings Policy does not allow Anonymous Users to start meetings." -Controls "The Global policy is the default. If a user has a policy assigned to them that takes precedent." -Citations "https://learn.microsoft.com/en-us/microsoftteams/settings-policies-reference?WT.mc_id=TeamsAdminCenterCSH#meeting-join--lobby" -Framework "Nist SP 800-53 Rev 5 FedRAMP High"
 
 # Get Reports folder
 $CurrentReportFolderName = (Get-ChildItem -Path ".\Reports" -Directory | Sort-Object CreationTime -Descending | Select-Object -First 1).Name
@@ -55,7 +62,7 @@ $CurrentReportFolderName = (Get-ChildItem -Path ".\Reports" -Directory | Sort-Ob
     New-HtmlSection -HeaderText 'MS.TEAMS.1.2 - Anonymous Users Shall Not be allowed to start meetings.' {
       New-HtmlTable -DataTable $htmlRuleMetaData -HideFooter -Transpose -DisableInfo
     }
-    New-HtmlSection -HeaderText 'Anonymous Users Meetings Settings' {
+    New-HtmlSection -HeaderText 'Global & Non-compliant policies regarding Anonymous Users Meetings Settings' {
       New-HTMLTable -DataTable $htmlConstruction -HideFooter -Transpose -DisableInfo
     }
   } -FilePath ".\Reports\$CurrentReportFolderName\HtmlReports\AnonUsersStartMeeting.html"
