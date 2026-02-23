@@ -34,6 +34,10 @@
     . .\Bokonon-Modules\CISA\Entra-Modules\Test-GuestInviterRoleCheck.ps1
     . .\Bokonon-Modules\CISA\Entra-Modules\Test-GuestUserAccess.ps1
     . .\Bokonon-Modules\CISA\Entra-Modules\Test-GuestsFromApprovedDomains.ps1
+  # Teams-Modules
+    . .\Bokonon-Modules\CISA\Teams-Modules\Test-ExternalParticipantsRequestControl.ps1
+    . .\Bokonon-Modules\CISA\Teams-Modules\Test-AnonUsersStartMeeting.ps1
+    . .\Bokonon-Modules\CISA\Teams-Modules\Test-AnonAndDialInBypassLobby.ps1
 # ClientSpecific
 ###. .\Bokonon-Modules\ClientSpecific\Test-ClientSpecific01.ps1
 # Custom
