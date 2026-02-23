@@ -37,12 +37,11 @@ function Test-AnonUsersStartMeeting {
     }
   } elseif ($PassFail -eq "Fail") {
       $htmlConstruction += $globalPolicy = [ordered] @{
-        'Global Policy'                      = ($teamsMeetingsPolicies | Where-Object {$_.Identity -eq "Global"}).Identity
+        'Policy Name'                        = ($teamsMeetingsPolicies | Where-Object {$_.Identity -eq "Global"}).Identity
         'Anonymous Users Can Start Meetings' = ($teamsMeetingsPolicies | Where-Object {$_.Identity -eq "Global"}).AllowAnonymousUsersToStartMeeting
-        '-----------------------'            = "-----------------------"
       }
     foreach ($_ in $teamsAnonUserStartMeetingPolicies) {
-      if ($_.AllowAnonymousUsersToStartMeeting -eq $true) {
+      if ($_.AllowAnonymousUsersToStartMeeting -eq $true -and $_.Identity -ne "Global") {
         $htmlConstruction += $policyLoop = [ordered] @{
           'Policy Name'                        = $_.Identity
           'Anonymous Users Can Start Meetings' = $_.AllowAnonymousUsersToStartMeeting
@@ -52,7 +51,7 @@ function Test-AnonUsersStartMeeting {
     }
 
 # Create Rule Meta Data
-  $htmlRuleMetaData = New-RuleMetaData -RuleDescription "Anonymous Users Shall Not be allowed to start meetings." -Result "$PassFail" -Resolution "Ensure each Meetings Policy does not allow Anonymous Users to start meetings." -Controls "The Global policy is the default. If a user has a policy assigned to them that takes precedent." -Citations "https://learn.microsoft.com/en-us/microsoftteams/settings-policies-reference?WT.mc_id=TeamsAdminCenterCSH#meeting-join--lobby" -Framework "Nist SP 800-53 Rev 5 FedRAMP High"
+  $htmlRuleMetaData = New-RuleMetaData -RuleDescription "Anonymous Users Shall Not be allowed to start meetings." -Result "$PassFail" -Resolution "Ensure each Meetings Policy does not allow Anonymous Users to start meetings." -Controls "The Global policy is the default. If a user has a policy assigned to them, that takes policy takes precedent." -Citations "https://learn.microsoft.com/en-us/microsoftteams/settings-policies-reference?WT.mc_id=TeamsAdminCenterCSH#meeting-join--lobby" -Framework "Nist SP 800-53 Rev 5 FedRAMP High"
 
 # Get Reports folder
 $CurrentReportFolderName = (Get-ChildItem -Path ".\Reports" -Directory | Sort-Object CreationTime -Descending | Select-Object -First 1).Name

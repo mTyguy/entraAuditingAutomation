@@ -37,13 +37,12 @@ function Test-AnonAndDialInBypassLobby {
     }
   } elseif ($PassFail -eq "Fail") {
       $htmlConstruction += $globalPolicy = [ordered] @{
-        'Global Policy'                  = ($teamsMeetingsPolicies | Where-Object {$_.Identity -eq "Global"}).Identity
+        'Policy Name'                    = ($teamsMeetingsPolicies | Where-Object {$_.Identity -eq "Global"}).Identity
         'Dial-In Users Can bypass lobby' = ($teamsMeetingsPolicies | Where-Object {$_.Identity -eq "Global"}).AllowPSTNUsersToBypassLobby
         'Who Can bypass the lobby'       = ($teamsMeetingsPolicies | Where-Object {$_.Identity -eq "Global"}).AutoAdmittedUsers
-        '-----------------------'        = "-----------------------"
       }
     foreach ($_ in $teamsAnonDialinWaitInLobby) {
-      if ($_.AllowPSTNUsersToBypassLobby -eq $true -and $_.AutoAdmittedUsers -eq "Everyone") {
+      if ($_.AllowPSTNUsersToBypassLobby -eq $true -and $_.AutoAdmittedUsers -eq "Everyone" -and $_.Identity -ne "Global") {
         $htmlConstruction += $policyLoop = [ordered] @{
           'Policy Name'                    = $_.Identity
           'Dial-In Users Can bypass lobby' = $_.AllowPSTNUsersToBypassLobby
@@ -54,7 +53,7 @@ function Test-AnonAndDialInBypassLobby {
     }
 
 # Create Rule Meta Data
-  $htmlRuleMetaData = New-RuleMetaData -RuleDescription "Anonymous and Dial-in Users Should Not be admitted automatically." -Result "$PassFail" -Resolution "Ensure Anon and Dial-in users must wait in lobby to be admitted to meetings." -Controls "The Global policy is the default. If a user has a policy assigned to them that takes precedent." -Citations "https://learn.microsoft.com/en-us/microsoftteams/settings-policies-reference?WT.mc_id=TeamsAdminCenterCSH#meeting-join--lobby" -Framework "Nist SP 800-53 Rev 5 FedRAMP High"
+  $htmlRuleMetaData = New-RuleMetaData -RuleDescription "Anonymous and Dial-in Users Should Not be admitted automatically." -Result "$PassFail" -Resolution "Ensure Anon and Dial-in users must wait in lobby to be admitted to meetings." -Controls "The Global policy is the default. If a user has a policy assigned to them, that takes policy takes precedent." -Citations "https://learn.microsoft.com/en-us/microsoftteams/settings-policies-reference?WT.mc_id=TeamsAdminCenterCSH#meeting-join--lobby" -Framework "Nist SP 800-53 Rev 5 FedRAMP High"
 
 # Get Reports folder
 $CurrentReportFolderName = (Get-ChildItem -Path ".\Reports" -Directory | Sort-Object CreationTime -Descending | Select-Object -First 1).Name

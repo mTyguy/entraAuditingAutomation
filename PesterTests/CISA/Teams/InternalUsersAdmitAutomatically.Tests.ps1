@@ -2,7 +2,7 @@ BeforeAll {
 Write-TestInProgress
 }
 
-Describe "Test-InternalUsersAdmitAutomatically" -Tag "CISA", "Teams" {
+Describe "Test-InternalUsersAdmitAutomatically" -Tag "CISA", "Teams", "Done" {
   Context "Internal Users Should be admitted automatically - MS.TEAMS.1.4" {
     It "Validates Internal Users are admitted automatically" {
       $result = Test-InternalUsersAdmitAutomatically

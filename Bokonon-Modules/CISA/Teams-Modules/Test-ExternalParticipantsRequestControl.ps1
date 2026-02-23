@@ -37,12 +37,11 @@ function Test-ExternalParticipantsRequestControl {
     }
   } elseif ($PassFail -eq "Fail") {
       $htmlConstruction += $globalPolicy = [ordered] @{
-        'Global Policy'                        = ($teamsMeetingsPolicies | Where-Object {$_.Identity -eq "Global"}).Identity
+        'Policy Name'                          = ($teamsMeetingsPolicies | Where-Object {$_.Identity -eq "Global"}).Identity
         'External Participant Request Control' = ($teamsMeetingsPolicies | Where-Object {$_.Identity -eq "Global"}).AllowExternalParticipantGiveRequestControl
-        '-----------------------'              = "-----------------------"
       }
     foreach ($_ in $teamsExternalParticipantRequestControl) {
-      if ($_.AllowExternalParticipantGiveRequestControl -eq $true) {
+      if ($_.AllowExternalParticipantGiveRequestControl -eq $true -and $_.Identity -ne "Global") {
         $htmlConstruction += $policyLoop = [ordered] @{
           'Policy Name'                          = $_.Identity
           'External Participant Request Control' = $_.AllowExternalParticipantGiveRequestControl
@@ -52,7 +51,7 @@ function Test-ExternalParticipantsRequestControl {
     }
 
 # Create Rule Meta Data
-  $htmlRuleMetaData = New-RuleMetaData -RuleDescription "External meeting participants Should Not be allowed to request control of shared desktops or windows." -Result "$PassFail" -Resolution "Ensure each Meetings Policy does not allow external participants to request control." -Controls "The Global policy is the default. If a user has a policy assigned to them that takes precedent." -Citations "https://learn.microsoft.com/en-us/microsoftteams/meeting-who-present-request-control" -Framework "Nist SP 800-53 Rev 5 FedRAMP High"
+  $htmlRuleMetaData = New-RuleMetaData -RuleDescription "External meeting participants Should Not be allowed to request control of shared desktops or windows." -Result "$PassFail" -Resolution "Ensure each Meetings Policy does not allow external participants to request control." -Controls "The Global policy is the default. If a user has a policy assigned to them, that takes policy takes precedent." -Citations "https://learn.microsoft.com/en-us/microsoftteams/meeting-who-present-request-control" -Framework "Nist SP 800-53 Rev 5 FedRAMP High"
 
 # Get Reports folder
 $CurrentReportFolderName = (Get-ChildItem -Path ".\Reports" -Directory | Sort-Object CreationTime -Descending | Select-Object -First 1).Name

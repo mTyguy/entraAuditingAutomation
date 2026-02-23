@@ -37,13 +37,12 @@ function Test-DialInBypassLobby {
     }
   } elseif ($PassFail -eq "Fail") {
       $htmlConstruction += $globalPolicy = [ordered] @{
-        'Global Policy'                  = ($teamsMeetingsPolicies | Where-Object {$_.Identity -eq "Global"}).Identity
+        'Policy Name'                    = ($teamsMeetingsPolicies | Where-Object {$_.Identity -eq "Global"}).Identity
         'Dial-In Users Can bypass lobby' = ($teamsMeetingsPolicies | Where-Object {$_.Identity -eq "Global"}).AllowPSTNUsersToBypassLobby
         'Who Can bypass the lobby'       = ($teamsMeetingsPolicies | Where-Object {$_.Identity -eq "Global"}).AutoAdmittedUsers
-        '-----------------------'        = "-----------------------"
       }
     foreach ($_ in $teamsDialinWaitInLobby) {
-      if ($_.AllowPSTNUsersToBypassLobby -eq $true) {
+      if ($_.AllowPSTNUsersToBypassLobby -eq $true -and $_.Identity -ne "Global") {
         $htmlConstruction += $policyLoop = [ordered] @{
           'Policy Name'                    = $_.Identity
           'Dial-In Users Can bypass lobby' = $_.AllowPSTNUsersToBypassLobby
@@ -54,7 +53,7 @@ function Test-DialInBypassLobby {
     }
 
 # Create Rule Meta Data
-  $htmlRuleMetaData = New-RuleMetaData -RuleDescription "Dial-in Users Should Not be able to bypass the lobby." -Result "$PassFail" -Resolution "Ensure Dial-in users must wait in lobby to be admitted to meetings." -Controls "The Global policy is the default. If a user has a policy assigned to them that takes precedent." -Citations "https://learn.microsoft.com/en-us/microsoftteams/who-can-bypass-meeting-lobby" -Framework "Nist SP 800-53 Rev 5 FedRAMP High"
+  $htmlRuleMetaData = New-RuleMetaData -RuleDescription "Dial-in Users Should Not be able to bypass the lobby." -Result "$PassFail" -Resolution "Ensure Dial-in users must wait in lobby to be admitted to meetings." -Controls "The Global policy is the default. If a user has a policy assigned to them, that takes policy takes precedent." -Citations "https://learn.microsoft.com/en-us/microsoftteams/who-can-bypass-meeting-lobby" -Framework "Nist SP 800-53 Rev 5 FedRAMP High"
 
 # Get Reports folder
 $CurrentReportFolderName = (Get-ChildItem -Path ".\Reports" -Directory | Sort-Object CreationTime -Descending | Select-Object -First 1).Name
