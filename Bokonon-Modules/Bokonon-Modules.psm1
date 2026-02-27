@@ -43,6 +43,8 @@
     . .\Bokonon-Modules\CISA\Teams-Modules\Test-MeetingRecordingDisabled.ps1
     . .\Bokonon-Modules\CISA\Teams-Modules\Test-LiveEventRecordingDisabled.ps1
     . .\Bokonon-Modules\CISA\Teams-Modules\Test-OnlyApprovedExternalDomains.ps1
+    . .\Bokonon-Modules\CISA\Teams-Modules\Test-UnmanagedUsersContactInternal.ps1
+    . .\Bokonon-Modules\CISA\Teams-Modules\Test-InternalUsersContactUnmanagedUsers.ps1
 # ClientSpecific
 ###. .\Bokonon-Modules\ClientSpecific\Test-ClientSpecific01.ps1
 # Custom
