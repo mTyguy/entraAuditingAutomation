@@ -33,7 +33,7 @@ function Test-MeetingRecordingDisabled {
   if ($PassFail -eq "Pass") {
     $htmlConstruction = [ordered] @{
       'Policies' = "None"
-      'Result'   = "No policies allow meetings to be recorded."
+      'Result'   = "No policies allow Meetings to be recorded."
     }
   } elseif ($PassFail -eq "Fail") {
       $htmlConstruction += $globalPolicy = [ordered] @{

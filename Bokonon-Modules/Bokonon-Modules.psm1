@@ -41,7 +41,8 @@
     . .\Bokonon-Modules\CISA\Teams-Modules\Test-InternalUsersAdmitAutomatically.ps1
     . .\Bokonon-Modules\CISA\Teams-Modules\Test-DialInBypassLobby.ps1
     . .\Bokonon-Modules\CISA\Teams-Modules\Test-MeetingRecordingDisabled.ps1
-    . .\Bokonon-Modules\CISA\Teams-Modules\Test-EventRecordingDisabled.ps1
+    . .\Bokonon-Modules\CISA\Teams-Modules\Test-LiveEventRecordingDisabled.ps1
+    . .\Bokonon-Modules\CISA\Teams-Modules\Test-OnlyApprovedExternalDomains.ps1
 # ClientSpecific
 ###. .\Bokonon-Modules\ClientSpecific\Test-ClientSpecific01.ps1
 # Custom
