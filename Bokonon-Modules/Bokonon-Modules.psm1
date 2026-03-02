@@ -46,6 +46,9 @@
     . .\Bokonon-Modules\CISA\Teams-Modules\Test-UnmanagedUsersContactInternal.ps1
     . .\Bokonon-Modules\CISA\Teams-Modules\Test-InternalUsersContactUnmanagedUsers.ps1
     . .\Bokonon-Modules\CISA\Teams-Modules\Test-EmailIntegration.ps1
+  # Defender-Modules
+    . .\Bokonon-Modules\CISA\Defender-Modules\Test-DefenderStandardAndStrictPolicies.ps1
+    . .\Bokonon-Modules\CISA\Defender-Modules\Test-DefenderStandardAndStrictPoliciesAllUsers.ps1
 # ClientSpecific
 ###. .\Bokonon-Modules\ClientSpecific\Test-ClientSpecific01.ps1
 # Custom
