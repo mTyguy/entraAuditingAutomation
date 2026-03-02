@@ -52,6 +52,8 @@
   # Exchange-Modules
     . .\Bokonon-Modules\CISA\Exchange-Modules\Test-AutoForwardingExternal.ps1
     . .\Bokonon-Modules\CISA\Exchange-Modules\Test-SPFCheck.ps1
+    . .\Bokonon-Modules\CISA\Exchange-Modules\Test-DKIMCheck.ps1
+    . .\Bokonon-Modules\CISA\Exchange-Modules\Test-DMARCCheck.ps1
 # ClientSpecific
 ###. .\Bokonon-Modules\ClientSpecific\Test-ClientSpecific01.ps1
 # Custom
