@@ -51,6 +51,7 @@
     . .\Bokonon-Modules\CISA\Defender-Modules\Test-DefenderStandardAndStrictPoliciesAllUsers.ps1
   # Exchange-Modules
     . .\Bokonon-Modules\CISA\Exchange-Modules\Test-AutoForwardingExternal.ps1
+    . .\Bokonon-Modules\CISA\Exchange-Modules\Test-SPFCheck.ps1
 # ClientSpecific
 ###. .\Bokonon-Modules\ClientSpecific\Test-ClientSpecific01.ps1
 # Custom
