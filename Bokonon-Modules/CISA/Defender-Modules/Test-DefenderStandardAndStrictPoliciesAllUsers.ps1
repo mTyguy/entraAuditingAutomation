@@ -90,7 +90,7 @@ $CurrentReportFolderName = (Get-ChildItem -Path ".\Reports" -Directory | Sort-Ob
 
 # Create Html Report
   New-HTML {
-    New-HtmlSection -HeaderText 'MS.DEFENDER.1.2 - Standard and Strict O365 Security Policies Shall be Enabled for All Users' {
+    New-HtmlSection -HeaderText 'MS.DEFENDER.1.2-3 - Standard and Strict O365 Security Policies Shall be Enabled for All Users' {
       New-HtmlTable -DataTable $htmlRuleMetaData -HideFooter -Transpose -DisableInfo
     }
     New-HtmlSection -HeaderText 'Standard and Strict Policy Settings' {
