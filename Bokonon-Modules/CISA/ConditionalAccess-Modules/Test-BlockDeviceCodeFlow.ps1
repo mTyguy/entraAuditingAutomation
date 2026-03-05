@@ -60,5 +60,5 @@ function Test-BlockDeviceCodeFlow {
     New-HtmlSection -HeaderText 'Enabled CAPs that block Device Code Flow' {
       New-HTMLTable -DataTable $htmlConstruction -HideFooter -Transpose -DisableInfo
     }
-  } -FilePath ".\Reports\$CurrentReportFolderName\HtmlReports\BlockDeviceCodeFlow.html"
+  } -FilePath ".\Reports\$CurrentReportFolderName\HtmlReports\MS.AAD.3.9_BlockDeviceCodeFlow.html"
 }

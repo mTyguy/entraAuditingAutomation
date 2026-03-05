@@ -96,5 +96,5 @@ $CurrentReportFolderName = (Get-ChildItem -Path ".\Reports" -Directory | Sort-Ob
     New-HtmlSection -HeaderText 'Standard and Strict Policy Settings' {
       New-HTMLTable -DataTable $htmlConstruction -HideFooter -Transpose -DisableInfo
     }
-  } -FilePath ".\Reports\$CurrentReportFolderName\HtmlReports\DefenderStandardAndStrictPoliciesAllUsers.html"
+  } -FilePath ".\Reports\$CurrentReportFolderName\HtmlReports\MS.DEFENDER.1.2-3_DefenderStandardAndStrictPoliciesAllUsers.html"
 }

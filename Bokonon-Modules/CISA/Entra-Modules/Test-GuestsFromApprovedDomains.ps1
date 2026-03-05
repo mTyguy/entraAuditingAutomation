@@ -57,5 +57,5 @@ $CurrentReportFolderName = (Get-ChildItem -Path ".\Reports" -Directory | Sort-Ob
     New-HtmlSection -HeaderText 'Guest Access Inbound Domain Settings' {
       New-HTMLTable -DataTable $htmlConstruction -HideFooter -Transpose -DisableInfo
     }
-  } -FilePath ".\Reports\$CurrentReportFolderName\HtmlReports\GuestsFromApprovedDomains.html"
+  } -FilePath ".\Reports\$CurrentReportFolderName\HtmlReports\MS.AAD.8.3_GuestsFromApprovedDomains.html"
 }

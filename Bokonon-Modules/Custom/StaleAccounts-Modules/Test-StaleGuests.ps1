@@ -56,5 +56,5 @@ $CurrentReportFolderName = (Get-ChildItem -Path ".\Reports" -Directory | Sort-Ob
     New-HtmlSection -HeaderText 'Guest User Information' {
       New-HTMLTable -DataTable $htmlConstruction -HideFooter -Transpose -DisableInfo
     }
-  } -FilePath ".\Reports\$CurrentReportFolderName\HtmlReports\GuestUsers00.html"
+  } -FilePath ".\Reports\$CurrentReportFolderName\HtmlReports\StaleGuests.html"
 }

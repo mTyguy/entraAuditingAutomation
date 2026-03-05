@@ -65,5 +65,5 @@ $CurrentReportFolderName = (Get-ChildItem -Path ".\Reports" -Directory | Sort-Ob
     New-HtmlSection -HeaderText 'Non-Cloud Only Accounts' {
       New-HTMLTable -DataTable $htmlConstruction -HideFooter -Transpose -DisableInfo
     }
-  } -FilePath ".\Reports\$CurrentReportFolderName\HtmlReports\CloudOnlyAdmins.html"
+  } -FilePath ".\Reports\$CurrentReportFolderName\HtmlReports\MS.AAD.7.3_CloudOnlyAdmins.html"
 }

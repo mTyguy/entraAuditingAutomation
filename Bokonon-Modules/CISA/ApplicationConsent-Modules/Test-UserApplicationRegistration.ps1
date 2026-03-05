@@ -50,5 +50,5 @@ function Test-UserApplicationRegistration {
     New-HtmlSection -HeaderText 'User Application Registration Settings' {
       New-HTMLTable -DataTable $htmlConstruction -HideFooter -Transpose -DisableInfo
     }
-  } -FilePath ".\Reports\$CurrentReportFolderName\HtmlReports\UserApplicationRegistration.html"
+  } -FilePath ".\Reports\$CurrentReportFolderName\HtmlReports\MS.AAD.5.1_UserApplicationRegistration.html"
 }

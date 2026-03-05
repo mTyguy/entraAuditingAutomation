@@ -67,5 +67,5 @@ $CurrentReportFolderName = (Get-ChildItem -Path ".\Reports" -Directory | Sort-Ob
     New-HtmlSection -HeaderText 'Global & Non-compliant policies regarding Meeting Recording Settings' {
       New-HTMLTable -DataTable $htmlConstruction -HideFooter -Transpose -DisableInfo
     }
-  } -FilePath ".\Reports\$CurrentReportFolderName\HtmlReports\OnlyApprovedExternalDomains.html"
+  } -FilePath ".\Reports\$CurrentReportFolderName\HtmlReports\MS.TEAMS.2.1_OnlyApprovedExternalDomains.html"
 }

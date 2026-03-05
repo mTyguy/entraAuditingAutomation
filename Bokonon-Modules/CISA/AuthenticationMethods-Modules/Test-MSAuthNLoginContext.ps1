@@ -69,5 +69,5 @@ function Test-MSAuthNLoginContext {
     New-HtmlSection -HeaderText 'Microsoft Authenticator policy information' {
       New-HTMLTable -DataTable $htmlConstruction -HideFooter -Transpose -DisableInfo
     }
-  } -FilePath ".\Reports\$CurrentReportFolderName\HtmlReports\MSAuthNLoginContext.html"
+  } -FilePath ".\Reports\$CurrentReportFolderName\HtmlReports\MS.AAD.3.3_MSAuthNLoginContext.html"
 }

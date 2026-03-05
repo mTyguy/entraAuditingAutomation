@@ -63,5 +63,5 @@ function Test-EnforcePhishResistantMFA {
     New-HtmlSection -HeaderText 'CAPs where Phishing Resistant MFA is enforced' {
       New-HTMLTable -DataTable $htmlConstruction -HideFooter -Transpose -DisableInfo
     }
-  } -FilePath ".\Reports\$CurrentReportFolderName\HtmlReports\EnforcePhishResistantMFA.html"
+  } -FilePath ".\Reports\$CurrentReportFolderName\HtmlReports\MS.AAD.3.1_EnforcePhishResistantMFA.html"
 }

@@ -61,5 +61,5 @@ $CurrentReportFolderName = (Get-ChildItem -Path ".\Reports" -Directory | Sort-Ob
     New-HtmlSection -HeaderText 'DKIM Domains Settings' {
       New-HTMLTable -DataTable $htmlConstruction -HideFooter -Transpose -DisableInfo
     }
-  } -FilePath ".\Reports\$CurrentReportFolderName\HtmlReports\DKIMCheck.html"
+  } -FilePath ".\Reports\$CurrentReportFolderName\HtmlReports\MS.EXCHANGE.3.1_DKIMCheck.html"
 }

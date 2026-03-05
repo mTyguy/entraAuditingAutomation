@@ -60,5 +60,5 @@ function Test-BlockHighRiskUser {
     New-HtmlSection -HeaderText 'Enabled CAPs blocking High Risk Users' {
       New-HTMLTable -DataTable $htmlConstruction -HideFooter -Transpose -DisableInfo
     }
-  } -FilePath ".\Reports\$CurrentReportFolderName\HtmlReports\BlockHighRiskUsers.html"
+  } -FilePath ".\Reports\$CurrentReportFolderName\HtmlReports\MS.AAD.2.1_BlockHighRiskUsers.html"
 }

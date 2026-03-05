@@ -64,5 +64,5 @@ $CurrentReportFolderName = (Get-ChildItem -Path ".\Reports" -Directory | Sort-Ob
     New-HtmlSection -HeaderText 'Global & Non-compliant policies regarding Internal Users Admission Settings' {
       New-HTMLTable -DataTable $htmlConstruction -HideFooter -Transpose -DisableInfo
     }
-  } -FilePath ".\Reports\$CurrentReportFolderName\HtmlReports\InternalUsersAdmitAutomatically.html"
+  } -FilePath ".\Reports\$CurrentReportFolderName\HtmlReports\MS.TEAMS.1.4_InternalUsersAdmitAutomatically.html"
 }

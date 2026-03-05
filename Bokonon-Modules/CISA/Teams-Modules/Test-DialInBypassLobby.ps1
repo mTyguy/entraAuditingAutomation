@@ -66,5 +66,5 @@ $CurrentReportFolderName = (Get-ChildItem -Path ".\Reports" -Directory | Sort-Ob
     New-HtmlSection -HeaderText 'Global & Non-compliant policies regarding Dial-In Users Meetings Settings' {
       New-HTMLTable -DataTable $htmlConstruction -HideFooter -Transpose -DisableInfo
     }
-  } -FilePath ".\Reports\$CurrentReportFolderName\HtmlReports\DialInBypassLobby.html"
+  } -FilePath ".\Reports\$CurrentReportFolderName\HtmlReports\MS.TEAMS.1.5_DialInBypassLobby.html"
 }

@@ -60,5 +60,5 @@ function Test-BlockHighRiskSignin {
     New-HtmlSection -HeaderText 'Enabled CAPs Blocking High Risk Signins' {
       New-HTMLTable -DataTable $htmlConstruction -HideFooter -Transpose -DisableInfo
     }
-  } -FilePath ".\Reports\$CurrentReportFolderName\HtmlReports\BlockHighRiskSignin.html"
+  } -FilePath ".\Reports\$CurrentReportFolderName\HtmlReports\MS.AAD.2.3_BlockHighRiskSignin.html"
 }

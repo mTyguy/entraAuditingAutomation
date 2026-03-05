@@ -2,7 +2,7 @@ BeforeAll {
 Write-TestInProgress
 }
 
-Describe "Test-LessSecureAuthNDisabled" -Tag "CISA", "AuthenticationMethods", "Done" {
+Describe "Test-LessSecureAuthNDisabled" -Tag "CISA", "Entra", "Done" {
   Context "SMS, Voice, and Email authentication Shall be disabled - MS.AAD.3.5" {
     It "Validates SMS, Voice, and Email authentication state" {
       $result = Test-LessSecureAuthNDisabled

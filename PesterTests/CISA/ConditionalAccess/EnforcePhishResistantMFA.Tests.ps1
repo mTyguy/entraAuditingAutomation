@@ -2,7 +2,7 @@ BeforeAll {
 Write-TestInProgress
 }
 
-Describe "Test-EnforcePhishResistantMFA" -Tag "CISA", "ConditionalAccess", "Done" {
+Describe "Test-EnforcePhishResistantMFA" -Tag "CISA", "Entra", "Done" {
   Context "Phishing Resistant MFA Shall be Enabled for all Users - MS.AAD.3.1" {
     It "Validates Phishing Resistant MFA is enabled for everyone" {
       $result = Test-EnforcePhishResistantMFA

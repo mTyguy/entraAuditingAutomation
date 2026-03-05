@@ -61,5 +61,5 @@ function Test-CompliantDevicesMFARegistration {
     New-HtmlSection -HeaderText 'Manage Device conditional access policies to register MFA' {
       New-HTMLTable -DataTable $htmlConstruction -HideFooter -Transpose -DisableInfo
     }
-  } -FilePath ".\Reports\$CurrentReportFolderName\HtmlReports\CompliantDevicesMFARegistration.html"
+  } -FilePath ".\Reports\$CurrentReportFolderName\HtmlReports\MS.AAD.3.8_CompliantDevicesMFARegistration.html"
 }

@@ -61,5 +61,5 @@ function Test-PhishResistantMFAForPrivRoles {
     New-HtmlSection -HeaderText 'CAPs where Phishing Resistant MFA is required for Highly Privileged Roles' {
       New-HTMLTable -DataTable $htmlConstruction -HideFooter -Transpose -DisableInfo
     }
-  } -FilePath ".\Reports\$CurrentReportFolderName\HtmlReports\PhishResistantMFAForPrivRoles.html"
+  } -FilePath ".\Reports\$CurrentReportFolderName\HtmlReports\MS.AAD.3.6_PhishResistantMFAForPrivRoles.html"
 }

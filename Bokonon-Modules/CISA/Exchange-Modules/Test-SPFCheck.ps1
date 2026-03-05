@@ -58,5 +58,5 @@ $CurrentReportFolderName = (Get-ChildItem -Path ".\Reports" -Directory | Sort-Ob
     New-HtmlSection -HeaderText 'SPF Domains Settings' {
       New-HTMLTable -DataTable $htmlConstruction -HideFooter -Transpose -DisableInfo
     }
-  } -FilePath ".\Reports\$CurrentReportFolderName\HtmlReports\SPFCheck.html"
+  } -FilePath ".\Reports\$CurrentReportFolderName\HtmlReports\MS.EXCHANGE.2.2_SPFCheck.html"
 }

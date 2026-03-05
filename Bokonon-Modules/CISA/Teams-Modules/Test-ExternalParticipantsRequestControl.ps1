@@ -64,5 +64,5 @@ $CurrentReportFolderName = (Get-ChildItem -Path ".\Reports" -Directory | Sort-Ob
     New-HtmlSection -HeaderText 'Global & Non-compliant policies regarding External Meeting Participants Settings' {
       New-HTMLTable -DataTable $htmlConstruction -HideFooter -Transpose -DisableInfo
     }
-  } -FilePath ".\Reports\$CurrentReportFolderName\HtmlReports\ExternalParticipantsRequestControl.html"
+  } -FilePath ".\Reports\$CurrentReportFolderName\HtmlReports\MS.TEAMS.1.1_ExternalParticipantsRequestControl.html"
 }

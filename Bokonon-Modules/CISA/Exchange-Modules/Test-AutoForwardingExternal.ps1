@@ -48,5 +48,5 @@ $CurrentReportFolderName = (Get-ChildItem -Path ".\Reports" -Directory | Sort-Ob
     New-HtmlSection -HeaderText 'Remote Domains Settings' {
       New-HTMLTable -DataTable $htmlConstruction -HideFooter -Transpose -DisableInfo
     }
-  } -FilePath ".\Reports\$CurrentReportFolderName\HtmlReports\AutoForwardingExternal.html"
+  } -FilePath ".\Reports\$CurrentReportFolderName\HtmlReports\MS.EXCHANGE.1.1_AutoForwardingExternal.html"
 }

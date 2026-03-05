@@ -48,5 +48,5 @@ function Test-AuthNMigrationStatus {
     New-HtmlSection -HeaderText 'Migration Status' {
       New-HTMLTable -DataTable $htmlConstruction -HideFooter -Transpose -DisableInfo
     }
-  } -FilePath ".\Reports\$CurrentReportFolderName\HtmlReports\AuthnMigrationStatus.html"
+  } -FilePath ".\Reports\$CurrentReportFolderName\HtmlReports\MS.AAD.3.4_AuthnMigrationStatus.html"
 }

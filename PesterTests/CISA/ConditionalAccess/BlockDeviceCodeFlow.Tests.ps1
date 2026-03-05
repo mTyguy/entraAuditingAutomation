@@ -2,7 +2,7 @@ BeforeAll {
 Write-TestInProgress
 }
 
-Describe "Test-BlockDeviceCodeFlow" -Tag "CISA", "ConditionalAccess", "Done" {
+Describe "Test-BlockDeviceCodeFlow" -Tag "CISA", "Entra", "Done" {
   Context "There Should be a Conditional Access Policy Blocking Device Code Flow Authentication - MS.AAD.3.9" {
     It "Validates at least 1 Conditional Access Policy Blocks Device Code Flow" {
       $result = Test-BlockDeviceCodeFlow

@@ -63,5 +63,5 @@ function Test-CompliantDevices {
     New-HtmlSection -HeaderText 'Manage Device Conditional Access Policies' {
       New-HTMLTable -DataTable $htmlConstruction -HideFooter -Transpose -DisableInfo
     }
-  } -FilePath ".\Reports\$CurrentReportFolderName\HtmlReports\CompliantDevices.html"
+  } -FilePath ".\Reports\$CurrentReportFolderName\HtmlReports\MS.AAD.3.7_CompliantDevices.html"
 }

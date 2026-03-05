@@ -61,5 +61,5 @@ function Test-BlockLegacyAuthN {
     New-HtmlSection -HeaderText 'Enabled CAPs blocking Legacy Authentication' {
       New-HTMLTable -DataTable $htmlConstruction -HideFooter -Transpose -DisableInfo
     }
-  } -FilePath ".\Reports\$CurrentReportFolderName\HtmlReports\BlockLegacyAuthN.html"
+  } -FilePath ".\Reports\$CurrentReportFolderName\HtmlReports\MS.AAD.1.1_BlockLegacyAuthN.html"
 }

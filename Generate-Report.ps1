@@ -59,3 +59,26 @@ $reportPath = ".\Reports\$timestamp\"
 $pesterOutput = Invoke-Pester -PassThru -TagFilter $Tags -ExcludeTagFilter $SkipTags
 
 $pesterOutput | ConvertTo-Json -Depth 3 -WarningAction SilentlyContinue | Out-File -FilePath "$($reportPath)auditReport.json"
+
+
+# Merge into 1 html report #
+Write-Host "Merging Reports..." -ForegroundColor DarkCyan
+
+$CurrentReportFolderName = (Get-ChildItem -Path ".\Reports" -Directory | Sort-Object CreationTime -Descending | Select-Object -First 1).Name
+
+$filesDir = "\home\ty\Desktop\pesterProject\entraAuditingAutomation\Reports\$CurrentReportFolderName\HtmlReports"
+$outputFile = "\home\ty\Desktop\pesterProject\entraAuditingAutomation\Reports\$CurrentReportFolderName\mergedReport.html"
+
+$htmlFiles = Get-ChildItem -Path $filesDir -Filter *.html | Sort-Object Name
+
+foreach ($file in $htmlFiles) {
+    # You may need to remove the <html>, <head>, and <body> tags from the individual 
+    # files to form a valid single HTML document, depending on how they were generated.
+    $content = Get-Content -Path $file.FullName -Raw
+    $combinedHtml += $content
+}
+
+$combinedHtml | Out-File -FilePath $outputFile -Encoding UTF8
+
+# Complete #
+Write-Host "Done!" -ForegroundColor DarkCyan

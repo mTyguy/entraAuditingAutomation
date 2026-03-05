@@ -46,5 +46,5 @@ $CurrentReportFolderName = (Get-ChildItem -Path ".\Reports" -Directory | Sort-Ob
     New-HtmlSection -HeaderText 'SMTP Settings' {
       New-HTMLTable -DataTable $htmlConstruction -HideFooter -Transpose -DisableInfo
     }
-  } -FilePath ".\Reports\$CurrentReportFolderName\HtmlReports\SmtpDisabled.html"
+  } -FilePath ".\Reports\$CurrentReportFolderName\HtmlReports\MS.EXCHANGE.5.1_SmtpDisabled.html"
 }

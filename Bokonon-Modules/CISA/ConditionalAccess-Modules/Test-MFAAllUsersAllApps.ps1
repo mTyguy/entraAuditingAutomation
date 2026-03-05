@@ -63,5 +63,5 @@ function Test-MFAAllUsersAllApps {
     New-HtmlSection -HeaderText 'CAPs where MFA targets all users + all apps' {
       New-HTMLTable -DataTable $htmlConstruction -HideFooter -Transpose -DisableInfo
     }
-  } -FilePath ".\Reports\$CurrentReportFolderName\HtmlReports\MFAAllUsersAllApps.html"
+  } -FilePath ".\Reports\$CurrentReportFolderName\HtmlReports\MS.AAD.3.2_MFAAllUsersAllApps.html"
 }

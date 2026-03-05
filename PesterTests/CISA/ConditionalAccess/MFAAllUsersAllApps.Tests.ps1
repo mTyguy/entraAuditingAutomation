@@ -2,7 +2,7 @@ BeforeAll {
 Write-TestInProgress
 }
 
-Describe "Test-MFAAllUsersAllApps" -Tag "CISA", "ConditionalAccess", "Done" {
+Describe "Test-MFAAllUsersAllApps" -Tag "CISA", "Entra", "Done" {
   Context "MFA Shall be Enabled For All Users & All Apps - MS.AAD.3.2" {
     It "Validates MFA is enabled for all Users targeting all Apps" {
       $result = Test-MFAAllUsersAllApps

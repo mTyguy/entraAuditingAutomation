@@ -76,5 +76,5 @@ function Test-LessSecureAuthNDisabled {
     New-HtmlSection -HeaderText 'SMS, Voice, & Email state' {
       New-HTMLTable -DataTable $htmlConstruction -HideFooter -Transpose -DisableInfo
     }
-  } -FilePath ".\Reports\$CurrentReportFolderName\HtmlReports\LessSecureAuthNDisabled.html"
+  } -FilePath ".\Reports\$CurrentReportFolderName\HtmlReports\MS.AAD.3.5_LessSecureAuthNDisabled.html"
 }

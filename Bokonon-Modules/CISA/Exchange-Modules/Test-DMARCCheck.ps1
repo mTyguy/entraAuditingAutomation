@@ -74,5 +74,5 @@ $CurrentReportFolderName = (Get-ChildItem -Path ".\Reports" -Directory | Sort-Ob
     New-HtmlSection -HeaderText 'DMARC Domains Settings' {
       New-HTMLTable -DataTable $htmlConstruction -HideFooter -Transpose -DisableInfo
     }
-  } -FilePath ".\Reports\$CurrentReportFolderName\HtmlReports\DMARCCheck.html"
+  } -FilePath ".\Reports\$CurrentReportFolderName\HtmlReports\MS.EXCHANGE.4.1_DMARCCheck.html"
 }

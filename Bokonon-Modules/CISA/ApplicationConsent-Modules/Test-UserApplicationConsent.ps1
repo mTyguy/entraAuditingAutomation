@@ -65,5 +65,5 @@ function Test-UserApplicationConsent {
     New-HtmlSection -HeaderText 'User Application Consent Settings' {
       New-HTMLTable -DataTable $htmlConstruction -HideFooter -Transpose -DisableInfo
     }
-  } -FilePath ".\Reports\$CurrentReportFolderName\HtmlReports\UserApplicationConsent.html"
+  } -FilePath ".\Reports\$CurrentReportFolderName\HtmlReports\MS.AAD.5.2_UserApplicationConsent.html"
 }

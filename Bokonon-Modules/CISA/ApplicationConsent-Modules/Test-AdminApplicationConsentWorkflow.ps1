@@ -51,5 +51,5 @@ function Test-AdminApplicationConsentWorkflow {
     New-HtmlSection -HeaderText 'Admin Applications Consent Workflow Settings' {
       New-HTMLTable -DataTable $htmlConstruction -HideFooter -Transpose -DisableInfo
     }
-  } -FilePath ".\Reports\$CurrentReportFolderName\HtmlReports\AdminApplicationConsentWorkflow.html"
+  } -FilePath ".\Reports\$CurrentReportFolderName\HtmlReports\MS.AAD.5.3_AdminApplicationConsentWorkflow.html"
 }
