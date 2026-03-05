@@ -66,8 +66,8 @@ Write-Host "Merging Reports..." -ForegroundColor DarkCyan
 
 $CurrentReportFolderName = (Get-ChildItem -Path ".\Reports" -Directory | Sort-Object CreationTime -Descending | Select-Object -First 1).Name
 
-$filesDir = "\home\ty\Desktop\pesterProject\entraAuditingAutomation\Reports\$CurrentReportFolderName\HtmlReports"
-$outputFile = "\home\ty\Desktop\pesterProject\entraAuditingAutomation\Reports\$CurrentReportFolderName\mergedReport.html"
+$filesDir = ".\Reports\$CurrentReportFolderName\HtmlReports"
+$outputFile = ".\Reports\$CurrentReportFolderName\mergedReport.html"
 
 $htmlFiles = Get-ChildItem -Path $filesDir -Filter *.html | Sort-Object Name
 
