@@ -7,6 +7,7 @@ function Test-CloudOnlyAdmins {
   [Cmdletbinding()]
   Param(
   )
+
 # Grab required data from environment
     
   $userRoleLookup = (Invoke-MgGraphRequest -Method GET -Uri "https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignments?`$expand=principal").Value

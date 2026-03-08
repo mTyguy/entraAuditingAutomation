@@ -1,5 +1,4 @@
 #to do:
-#accept multiple tags, right now you can only exclude or include a single tag
 #more preflight checks
 <#
 Version 0.0.1
@@ -27,11 +26,27 @@ if ((Get-InstalledModule -Name Pester).Version -lt 5) {
   exit
   }
 
-# Check if Mg-Graph module is installed
+# Check if MgGraph module is installed
 # https://learn.microsoft.com/en-us/powershell/microsoftgraph/installation
 if (-not (Get-InstalledModule -Name Microsoft.Graph)) {
   Write-Host "Microsoft Graph PowerShell SDK is not installed, exiting"
   Write-Host "https://learn.microsoft.com/en-us/powershell/microsoftgraph/installation"
+  exit
+  }
+  
+# Check if MicrosoftTeams module is installed
+# https://learn.microsoft.com/en-us/microsoftteams/teams-powershell-install
+if (-not (Get-InstalledModule -Name MicrosoftTeams)) {
+  Write-Host "Microsoft Teams module is not installed, exiting"
+  Write-Host "https://learn.microsoft.com/en-us/microsoftteams/teams-powershell-install"
+  exit
+  }
+
+# Check if ExchangeOnline module is installed
+# https://learn.microsoft.com/en-us/powershell/exchange/connect-to-exchange-online-powershell
+if (-not (Get-InstalledModule -Name ExchangeOnlineManagement)) {
+  Write-Host "Exchange Online Management module is not installed, exiting"
+  Write-Host "https://learn.microsoft.com/en-us/powershell/exchange/connect-to-exchange-online-powershell"
   exit
   }
 
