@@ -15,8 +15,10 @@ function Test-PhishResistantMFAForPrivRoles {
 
   foreach ($_ in $conditionalAccessPolicies) {
     if (($_.conditions.users.includeRoles -join ",") -like ((Write-CISAHighlyPrivilegedRoles).Values -join ",") -and $_.grantControls.authenticationStrength.displayName -eq "Phishing-resistant MFA" -and $_.conditions.clientAppTypes -eq "all" -and $_.state -eq "enabled") {
-      $policyName = $_.displayName
       $PassFail = "Pass"
+      break
+    } else {
+      $PassFail = "Fail"
     }
   }
 

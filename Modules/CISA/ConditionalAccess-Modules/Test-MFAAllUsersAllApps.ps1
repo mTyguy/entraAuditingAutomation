@@ -15,8 +15,8 @@ function Test-MFAAllUsersAllApps {
 
   foreach ($_ in $conditionalAccessPolicies) {
     if ($_.conditions.users.includeUsers -eq "All" -and $_.conditions.clientAppTypes -eq "all" -and $_.grantControls.builtInControls -eq "mfa" -and $_.state -eq "enabled") {
-      $policyName = $_.displayName
       $PassFail = "Pass"
+      break
     } else {
       $PassFail = "Fail"
     }

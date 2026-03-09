@@ -15,8 +15,8 @@ function Test-CompliantDevicesMFARegistration {
 
   foreach ($_ in $conditionalAccessPolicies) {
     if ($_.grantControls.builtInControls -contains "compliantDevice" -and $_.grantControls.builtInControls -contains "domainJoinedDevice" -and $_.grantControls.operator -eq "OR" -and $_.conditions.applications.includeUserActions -eq "urn:user:registersecurityinfo" -and $_.conditions.users.includeUsers -eq "All" -and $_.state -eq "enabled") {
-      $policyName = $_.displayName
       $PassFail = "Pass"
+      break
     } else {
       $PassFail = "Fail"
     }

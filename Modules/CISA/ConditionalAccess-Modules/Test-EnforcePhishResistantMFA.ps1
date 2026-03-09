@@ -15,8 +15,8 @@ function Test-EnforcePhishResistantMFA {
 
   foreach ($_ in $conditionalAccessPolicies) {
     if ($_.grantControls.authenticationStrength.displayName -eq "Phishing-resistant MFA" -and $_.conditions.clientAppTypes -eq "all" -and $_.conditions.users.includeUsers -eq "All" -and $_.state -eq "enabled") {
-      $policyName = $_.displayName
       $PassFail = "Pass"
+      break
     } else {
       $PassFail = "Fail"
     }

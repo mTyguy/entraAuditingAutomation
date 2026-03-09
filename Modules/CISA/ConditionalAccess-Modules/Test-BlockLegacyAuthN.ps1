@@ -15,8 +15,8 @@ function Test-BlockLegacyAuthN {
 
   foreach ($_ in $conditionalAccessPolicies) {
     if ($_.conditions.clientAppTypes -contains "exchangeActiveSync"-and $_.conditions.clientAppTypes -contains "other" -and $_.grantControls.builtInControls -eq "block" -and $_.state -eq "enabled") {
-      $policyName = $_.displayName
       $PassFail = "Pass"
+      break
     } else {
       $PassFail = "Fail"
     }

@@ -15,8 +15,8 @@ function Test-BlockDeviceCodeFlow {
 
   foreach ($_ in $conditionalAccessPolicies) {
     if ($_.conditions.authenticationFlows.values -eq "deviceCodeFlow" -and $_.conditions.users.includeUsers -eq "All" -and $_.conditions.clientAppTypes -eq "all" -and $_.state -eq "enabled") {
-      $policyName = $_.displayName
       $PassFail = "Pass"
+      break
     } else {
       $PassFail = "Fail"
     }

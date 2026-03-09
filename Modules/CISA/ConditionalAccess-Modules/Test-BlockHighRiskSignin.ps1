@@ -15,8 +15,8 @@ function Test-BlockHighRiskSignin {
 
   foreach ($_ in $conditionalAccessPolicies) {
     if ($_.conditions.signInRiskLevels -match "high" -and $_.grantControls.builtInControls -eq "block" -and $_.state -eq "enabled") {
-      $policyName = $_.displayName
       $PassFail = "Pass"
+      break
     } else {
       $PassFail = "Fail"
     }
