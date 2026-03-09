@@ -2,7 +2,9 @@
 Entra/M365 auditing automation framework used to generate a baseline report of environment.
 
 Demo:
-[demo_2026-03-09.webm](https://github.com/user-attachments/assets/da171cfd-a25b-4f85-ade6-16b0ca75584d)
+<p align="center" width="100%">
+  <video src="https://github.com/user-attachments/assets/da171cfd-a25b-4f85-ade6-16b0ca75584d)" width="80%" controls></video>
+</p>
 
 Features:
 - Quickly assess an environment through API calls.
