@@ -1,5 +1,3 @@
-#to do:
-#more preflight checks
 <#
 Version 0.0.1
 .SYNOPSIS
@@ -52,7 +50,7 @@ if (-not (Get-InstalledModule -Name ExchangeOnlineManagement)) {
 
 ##################
 # Import Modules #
-$modulePath = ".\Bokonon-Modules\Bokonon-Modules.psm1"
+$modulePath = ".\Modules\Modules.psm1"
 Import-Module -Name $modulePath -Force
 
 ################
