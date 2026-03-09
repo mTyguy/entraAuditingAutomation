@@ -2,7 +2,7 @@ BeforeAll {
 Write-TestInProgress
 }
 
-Describe "Test-DefenderStandardAndStrictPoliciesAllUsers" -Tag "CISA", "Defender", "Done" {
+Describe "Test-DefenderStandardAndStrictPoliciesAllUsers" -Tag "CISA", "Defender" {
   Context "Standard and Strict O365 Security Policies Shall be Enabled All Users - MS.DEFENDER.1.2-3" {
     It "Validates Standard and Strict policies are enabled for all" {
       $result = Test-DefenderStandardAndStrictPoliciesAllUsers

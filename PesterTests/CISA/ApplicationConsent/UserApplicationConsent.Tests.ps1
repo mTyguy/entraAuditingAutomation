@@ -2,7 +2,7 @@ BeforeAll {
 Write-TestInProgress
 }
 
-Describe "Test-UserApplicationConsent" -Tag "CISA", "Entra", "Done" {
+Describe "Test-UserApplicationConsent" -Tag "CISA", "Entra" {
   Context "User Application Consent Settings - MS.AAD.5.2" {
     It "Validates that users cannot give Consent to Applications" {
       $result = Test-UserApplicationConsent

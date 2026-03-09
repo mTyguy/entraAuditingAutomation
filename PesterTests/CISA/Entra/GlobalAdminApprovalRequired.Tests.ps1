@@ -2,7 +2,7 @@ BeforeAll {
 Write-TestInProgress
 }
 
-Describe "Test-GlobalAdminApprovalRequired" -Tag "CISA", "Entra", "Done" {
+Describe "Test-GlobalAdminApprovalRequired" -Tag "CISA", "Entra" {
   Context "Activation of Global Administrator Rule via PIM Shall require Approval - MS.AAD.7.6" {
     It "Validates Activation of Global Admin role requires Approval" {
       $result = Test-GlobalAdminApprovalRequired

@@ -2,7 +2,7 @@ BeforeAll {
 Write-TestInProgress
 }
 
-Describe "Test-MSAuthNLoginContext" -Tag "CISA", "Entra", "Done" {
+Describe "Test-MSAuthNLoginContext" -Tag "CISA", "Entra" {
   Context "The Microsoft Authenticator Shall display Application and Location information - MS.AAD.3.3" {
     It "Validates Microsoft Authenticator displays Application and Location information" {
       $result = Test-MSAuthNLoginContext

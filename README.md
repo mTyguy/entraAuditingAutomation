@@ -5,6 +5,11 @@ Features:
 - Quickly assess an environment through API calls.
 - Use tags (-Tags or -Skiptags when running Generate-Report.ps1) to curate which platform, feature, or benchmark to run tests against.
 - Automatically creates HTML report describing Pass/Fail status, relevant live configuration in tenant, and guidance/documentation on how to harden.
+- Custom function Get-AdminRoles that enumerates Users Administrator Roles via MgGraph -- can search by User principal name, user guid, role name, or role guid -- useful for on the fly enumeration of roles.
+
+Current Rules:
+- 44 rules scoped to CISA's baseline policies NIST 800-53 + FedRAMP High controls
+- Assess Entra, Exchange, Defender, & Teams
 
 Requirements: Microsoft Teams, ExchangeOnline, and MgGraph modules as well as Pester version 5 or greater and PSWriteHTML
 

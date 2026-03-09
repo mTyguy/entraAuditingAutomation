@@ -2,7 +2,7 @@ BeforeAll {
 Write-TestInProgress
 }
 
-Describe "Test-AnonUsersStartMeeting" -Tag "CISA", "Teams", "Done" {
+Describe "Test-AnonUsersStartMeeting" -Tag "CISA", "Teams" {
   Context "Anonymous Users Shall Not be allowed to start meetings - MS.TEAMS.1.2" {
     It "Validates anonymous user settings in meetings policies" {
       $result = Test-AnonUsersStartMeeting

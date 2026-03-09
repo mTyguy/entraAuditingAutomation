@@ -2,7 +2,7 @@ BeforeAll {
 Write-TestInProgress
 }
 
-Describe "Test-BlockHighRiskSignin" -Tag "CISA", "Entra", "Done" {
+Describe "Test-BlockHighRiskSignin" -Tag "CISA", "Entra" {
   Context "There Shall be a Conditional Access Policy Blocking High Risk Signin Events - MS.AAD.2.3" {
     It "Validates at least 1 Conditional Access Policy Blocks High Risk Signin Events" {
       $result = Test-BlockHighRiskSignin

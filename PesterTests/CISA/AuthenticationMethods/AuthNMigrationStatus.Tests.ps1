@@ -2,7 +2,7 @@ BeforeAll {
 Write-TestInProgress
 }
 
-Describe "Test-AuthNMigrationStatus" -Tag "CISA", "Entra", "Done" {
+Describe "Test-AuthNMigrationStatus" -Tag "CISA", "Entra" {
   Context "Authentication Migration Shall be completed - MS.AAD.3.4" {
     It "Validates the completion of migration from legacy policy settings" {
       $result = Test-AuthNMigrationStatus

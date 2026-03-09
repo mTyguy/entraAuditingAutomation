@@ -2,7 +2,7 @@ BeforeAll {
 Write-TestInProgress
 }
 
-Describe "Test-GuestUserAccess" -Tag "CISA", "Entra", "Done" {
+Describe "Test-GuestUserAccess" -Tag "CISA", "Entra" {
   Context "Guest users should have limited access to directory objects - MS.AAD.8.1" {
     It "Validates Guest Access Settings" {
       $result = Test-GuestUserAccess

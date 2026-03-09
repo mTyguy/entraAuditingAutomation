@@ -2,7 +2,7 @@ BeforeAll {
 Write-TestInProgress
 }
 
-Describe "Test-GlobalAdminsCount" -Tag "CISA", "Entra", "Done" {
+Describe "Test-GlobalAdminsCount" -Tag "CISA", "Entra" {
   Context "There Shall be between 2 and 8 Global Administrators MS.AAD.7.1" {
     It "Validates the number of assigned Global Administrators" {
       $result = Test-GlobalAdminsCount
