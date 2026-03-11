@@ -17,6 +17,7 @@ Current Rules:
 - Assess Entra, Exchange, Defender, & Teams
 
 Requirements: Microsoft Teams, ExchangeOnline, and MgGraph modules as well as Pester version 5 or greater and PSWriteHTML
+
 Graph Scopes: Policy.Read.All, Policy.Read.AuthenticationMethod, RoleManagement.Read.Directory, Domain.Read.All, RoleAssignmentSchedule.Read.Directory
 
 Create your own modules by:
