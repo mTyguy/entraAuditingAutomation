@@ -57,4 +57,5 @@
 # ClientSpecific
 #  . .\Modules\ClientSpecific\Test-ClientSpecific01.ps1
 # Custom
-#  . .\Modules\Custom\Test-CustomTest01.ps1
+  . .\Modules\Custom\Test-GraphCLIAssignment.ps1
+  . .\Modules\Custom\Test-GraphExplorerAssignment.ps1
