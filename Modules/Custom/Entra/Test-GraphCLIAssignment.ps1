@@ -1,5 +1,6 @@
 <#
 Documentation: https://learn.microsoft.com/en-us/graph/api/serviceprincipal-get
+https://github.com/merill/microsoft-info
 Least Privilege Delegated   = Application.Read.All
 Least Privilege Application = Application.Read.All
 #>

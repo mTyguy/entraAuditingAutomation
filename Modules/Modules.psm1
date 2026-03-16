@@ -57,5 +57,10 @@
 # ClientSpecific
 #  . .\Modules\ClientSpecific\Test-ClientSpecific01.ps1
 # Custom
-  . .\Modules\Custom\Test-GraphCLIAssignment.ps1
-  . .\Modules\Custom\Test-GraphExplorerAssignment.ps1
+  #Entra
+    . .\Modules\Custom\Entra\Test-GraphCLIAssignment.ps1
+    . .\Modules\Custom\Entra\Test-GraphExplorerAssignment.ps1
+  #Intune
+    . .\Modules\Custom\Intune\Test-MultiAdminDeviceRetire.ps1
+    . .\Modules\Custom\Intune\Test-MultiAdminDeviceDelete.ps1
+    . .\Modules\Custom\Intune\Test-MultiAdminDeviceWipe.ps1
