@@ -18,7 +18,7 @@ Current Rules:
 
 Requirements: Microsoft Teams, ExchangeOnline, and MgGraph modules as well as Pester version 5 or greater and PSWriteHTML
 
-Graph Scopes: Policy.Read.All, Policy.Read.AuthenticationMethod, RoleManagement.Read.Directory, Domain.Read.All, RoleAssignmentSchedule.Read.Directory, Application.Read.All
+Graph Scopes: Policy.Read.All, Policy.Read.AuthenticationMethod, RoleManagement.Read.Directory, Domain.Read.All, RoleAssignmentSchedule.Read.Directory, Application.Read.All, DeviceManagementRBAC.Read.All
 
 Create your own modules by:
 1) Creating the test .ps1 file and place in related Modules folder
